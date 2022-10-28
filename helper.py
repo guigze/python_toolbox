@@ -13,7 +13,7 @@ def plot_curves(history, new_history = None, fine_tuning = False, initial_epochs
     accuracy = history.history['accuracy'] + new_history.history['accuracy']
     val_accuracy = history.history['val_accuracy'] + new_history.history['val_accuracy']
 
-  epochs = range(loss)
+  epochs = range(len(loss))
 
   plt. figure(figsize = (20,7))
 
