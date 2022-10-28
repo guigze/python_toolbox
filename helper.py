@@ -8,12 +8,12 @@ def plot_curves(history, new_history = None, fine_tuning = False, initial_epochs
   val_accuracy = history.history['val_accuracy']
  
   if fine_tuning:
-    loss += new_history.history['loss']
-    val_loss += new_history.history['val_loss']
-    accuracy += new_history.history['accuracy']
-    val_accuracy += new_history.history['val_accuracy']
+    loss = history.history['loss'] + new_history.history['loss']
+    val_loss = history.history['val_loss'] + new_history.history['val_loss']
+    accuracy = history.history['accuracy'] + new_history.history['accuracy']
+    val_accuracy = history.history['val_accuracy'] + new_history.history['val_accuracy']
 
-  epochs = range(len(history.history['loss']))
+  epochs = range(loss)
 
   plt. figure(figsize = (20,7))
 
